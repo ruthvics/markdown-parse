@@ -1,4 +1,6 @@
-![alt text](CSE15L.jpg)
+# Title
+[a link!](https://something.com)
+[another link!](some-page.html)
 
-Hello
-(Hello world)
+
+however the vector [0,2,3] (not great)
