@@ -14,19 +14,14 @@ public class MarkdownParse {
         System.out.println(currentIndex);
         int lastClosedParen = markdown.lastIndexOf(")");
         System.out.println(markdown.length() + ":::" + lastClosedParen);
-        // int i = 0;
+
         while (currentIndex < markdown.length()) {
-            // System.out.println("C1: " + currentIndex);
+
             int nextOpenBracket = markdown.indexOf("[", currentIndex);
             int nextCloseBracket = markdown.indexOf("]", nextOpenBracket);
             int openParen = markdown.indexOf("(", nextCloseBracket);
-            // System.out.println("CB: " + nextCloseBracket);
-            // System.out.println("OP: " + openParen);
-            // int anotherOpenParen = markdown.indexOf("(", openParen + 1);
-            // int closeParen = markdown.indexOf(")", openParen);
 
             if (openParen - nextCloseBracket > 2) {
-                // openParen = markdown.indexOf("[", openParen);
                 currentIndex = markdown.indexOf("[", currentIndex + 1);
 
                 if (currentIndex == lastClosedParen) {
@@ -35,25 +30,19 @@ public class MarkdownParse {
                     break;
                 }
 
-                // System.out.println("Cont: " + currentIndex);
                 continue;
             }
 
             int closeParen = markdown.indexOf(")", openParen);
-            // System.out.println("cP2: " + closeParen);
 
             toReturn.add(markdown.substring(openParen + 1, closeParen));
             currentIndex = closeParen + 1;
 
-            // System.out.println("C2: " + currentIndex);
             if (closeParen == lastClosedParen) {
                 break;
             }
-            // i++;
         }
-        // System.out.println(currentIndex);
         int test = markdown.indexOf("]");
-        // System.out.println(test);
         return toReturn;
     }
 
