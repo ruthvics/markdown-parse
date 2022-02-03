@@ -29,7 +29,6 @@ public class MarkdownParse {
                 } else if (currentIndex < 0) {
                     break;
                 }
-
                 continue;
             }
 
