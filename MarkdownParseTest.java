@@ -12,7 +12,7 @@ public class MarkdownParseTest {
 
     @Test
     public void addition() {
-        assertEquals("", MarkdownParse.getLinks("test4.md")); // checks if these two parameters are equal
+        assertEquals(" ", MarkdownParse.getLinks("test4.md")); // checks if these two parameters are equal
     }
 
 }
