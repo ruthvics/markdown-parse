@@ -12,7 +12,14 @@ public class MarkdownParseTest {
 
     @Test
     public void addition() {
-        assertEquals("", MarkdownParse.getLinks("")); // checks if these two parameters are equal
+        assertEquals("[https://something.com]", MarkdownParse
+                .getLinks("[a link!](https://something.com)\nhowever the vector [0,2,3] )(\n![alt text](CSE15L.jpg)")); // checks
+                                                                                                                        // if
+                                                                                                                        // these
+                                                                                                                        // two
+                                                                                                                        // parameters
+                                                                                                                        // are
+                                                                                                                        // equal
     }
 
 }
