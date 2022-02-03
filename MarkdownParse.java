@@ -10,6 +10,11 @@ public class MarkdownParse {
         ArrayList<String> toReturn = new ArrayList<>();
         // find the next [, then find the ], then find the (, then take up to
         // the next )
+
+        if (markdown.length() < 4) {
+            return toReturn;
+        }
+
         int currentIndex = 0;
         System.out.println(currentIndex);
         int lastClosedParen = markdown.lastIndexOf(")");
