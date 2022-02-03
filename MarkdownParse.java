@@ -47,7 +47,7 @@ public class MarkdownParse {
             }
 
         }
-        int test = markdown.indexOf("]");
+        // int test = markdown.indexOf("]");
 
         // if(markdown.indexOf("!", currentIndex) == nextOpenBracket++)
         return toReturn;

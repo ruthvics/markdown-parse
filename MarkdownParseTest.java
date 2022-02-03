@@ -3,23 +3,29 @@ import org.junit.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class MarkdownParseTest {
 
-    List<String> answ;
+    ArrayList<String> answ = new ArrayList<String>();
     Path test1;
 
+    public void setAnsw() {
+        answ.add("https://something.com");
+    }
+
     @Test
-    public void addition() {
-        assertEquals("[https://something.com]", MarkdownParse
-                .getLinks("[a link!](https://something.com)\nhowever the vector [0,2,3] )(\n![alt text](CSE15L.jpg)")); // checks
-                                                                                                                        // if
-                                                                                                                        // these
-                                                                                                                        // two
-                                                                                                                        // parameters
-                                                                                                                        // are
-                                                                                                                        // equal
+    public void addition() throws IOException {
+        setAnsw();
+        assertEquals(answ, MarkdownParse.getLinks(Files.readString(Path.of("test2.md")))); // checks
+                                                                                           // if
+                                                                                           // these
+                                                                                           // two
+                                                                                           // parameters
+                                                                                           // are
+                                                                                           // equal
     }
 
 }
